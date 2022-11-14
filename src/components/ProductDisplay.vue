@@ -76,6 +76,9 @@
       },
       nextProduct() {
         this.id++
+        if (this.id > 20) {
+          this.id = 1
+        }
         fetch('https://fakestoreapi.com/products/' + this.id)
           .then(res => res.json())
           .then(json => this.update(json))
